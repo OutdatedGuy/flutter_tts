@@ -10,7 +10,7 @@ import 'interop_types.dart';
 
 enum TtsState { playing, stopped, paused, continued }
 
-class FlutterTtsPlugin {
+class FlutterTtsWeb {
   static const String platformChannel = "flutter_tts";
   static late MethodChannel channel;
   bool awaitSpeakCompletion = false;
@@ -30,7 +30,7 @@ class FlutterTtsPlugin {
   static void registerWith(Registrar registrar) {
     channel =
         MethodChannel(platformChannel, const StandardMethodCodec(), registrar);
-    final instance = FlutterTtsPlugin();
+    final instance = FlutterTtsWeb();
     channel.setMethodCallHandler(instance.handleMethodCall);
   }
 
@@ -40,7 +40,7 @@ class FlutterTtsPlugin {
   Timer? t;
   bool supported = false;
 
-  FlutterTtsPlugin() {
+  FlutterTtsWeb() {
     try {
       utterance = SpeechSynthesisUtterance();
       _listeners();
@@ -101,10 +101,10 @@ class FlutterTtsPlugin {
     }.toJS;
 
     utterance.onBoundary = (JSObject event) {
-      int charIndex = event['charIndex'] as int;
-      String name = event['name'] as String;
+      int charIndex = event['charIndex'].dartify() as int;
+      String name = event['name'].dartify() as String;
       if (name == 'sentence') return;
-      String text = utterance['text'] as String;
+      String text = utterance['text'].dartify() as String;
       int endIndex = charIndex;
       while (endIndex < text.length &&
           !RegExp(r'[\s,.!?]').hasMatch(text[endIndex])) {
