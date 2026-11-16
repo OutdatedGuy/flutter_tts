@@ -1,4 +1,4 @@
-package com.eyedeadevelopment.fluttertts
+package com.eyedeadevelopment.flutter_tts
 
 import android.content.ContentValues
 import android.content.Context

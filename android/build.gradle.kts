@@ -1,4 +1,4 @@
-group = "com.eyedeadevelopment.fluttertts"
+group = "com.eyedeadevelopment.flutter_tts"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -26,7 +26,7 @@ plugins {
 }
 
 android {
-    namespace = "com.eyedeadevelopment.fluttertts"
+    namespace = "com.eyedeadevelopment.flutter_tts"
 
     compileSdk = 36
 

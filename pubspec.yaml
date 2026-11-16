@@ -20,7 +20,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.eyedeadevelopment.fluttertts
+        package: com.eyedeadevelopment.flutter_tts
         pluginClass: FlutterTtsPlugin
       ios:
         pluginClass: FlutterTtsPlugin
@@ -32,5 +32,5 @@ flutter:
           - uwp
           - win32
       web:
-        pluginClass: FlutterTtsPlugin
+        pluginClass: FlutterTtsWeb
         fileName: flutter_tts_web.dart
