@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "flutter_tts",
     platforms: [
-        .macOS("12.0")
+        .macOS("10.15")
     ],
     products: [
         .library(name: "flutter-tts", targets: ["flutter_tts"])
